@@ -2,6 +2,9 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+    - { resource: sonata/sonata_block.yml }
+    - { resource: sonata/sonata_admin.yml }
+
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }

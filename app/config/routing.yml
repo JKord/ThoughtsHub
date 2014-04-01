@@ -8,6 +8,10 @@ th_admin:
     type:     annotation
     prefix:   /
 
+_admin:
+    resource: routing_admin.yml
+    prefix:   /admin
+
 #th_user:
 #    resource: "@THUserBundle/Controller/"
 #    type:     annotation

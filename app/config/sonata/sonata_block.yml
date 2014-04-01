@@ -1,0 +1,13 @@
+sonata_block:
+#    context_manager: sonata.page.block.context_manager
+    default_contexts: [cms]
+
+    http_cache:
+        listener: true
+
+    menus:
+        "SonataDemoBundle:Builder:mainMenu": "Main Menu"
+
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]

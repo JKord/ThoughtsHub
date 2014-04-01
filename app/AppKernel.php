@@ -26,16 +26,18 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             //new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
 
-            // Add your dependencies
-            new Sonata\CoreBundle\SonataCoreBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            // KNP HELPER BUNDLES
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            // If you haven't already, add the storage bundle
-            // This example uses SonataDoctrineORMAdmin but it works the same with the alternatives
-            //new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            // Then add SonataAdminBundle
+
             new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+
+            // SONATA CORE & HELPER BUNDLES
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\IntlBundle\SonataIntlBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
             
             new TH\UserBundle\THUserBundle(),
             new TH\AdminBundle\THAdminBundle(),
