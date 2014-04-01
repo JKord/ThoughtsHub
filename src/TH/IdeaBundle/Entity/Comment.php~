@@ -1,0 +1,68 @@
+<?php
+namespace TH\IdeaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM,
+    Gedmo\Mapping\Annotation as Gedmo;
+
+/**
+ * Comments
+ *
+ * @ORM\Table(name="comments", indexes={@ORM\Index(name="FK_comments_fos_user", columns={"user_id"}), @ORM\Index(name="FK_comments_thoughts", columns={"thoughts_id"})})
+ * @ORM\Entity
+ */
+class Comment
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="text", nullable=true)
+     */
+    private $text;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="TH\UserBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+    /**
+     * @var \Thoughts
+     *
+     * @ORM\ManyToOne(targetEntity="Thought")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="thoughts_id", referencedColumnName="id")
+     * })
+     */
+    private $thoughts;
+
+    /**
+     * @var datetime $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    private $created;
+
+    /**
+     * @var datetime $updated
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime")
+     */
+    private $updated;
+
+
+}
